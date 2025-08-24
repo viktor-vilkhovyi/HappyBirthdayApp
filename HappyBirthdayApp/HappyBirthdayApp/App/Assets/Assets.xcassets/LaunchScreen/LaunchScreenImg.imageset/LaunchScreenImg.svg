@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 1024 1024">
+  <defs>
+    <style>
+      .orange { fill:#F59E0B; stroke:#F59E0B; }
+      .orange-stroke { fill:none; stroke:#F59E0B; stroke-width:26; stroke-linecap:round; stroke-linejoin:round; }
+      .blue { fill:#B9E5EF; }
+      .peach { fill:#F7B5A6; }
+      .mint { fill:#A9DCCF; }
+      .confetti-blue { fill:#76C7E7; }
+      .confetti-mint { fill:#A9DCCF; }
+      .confetti-peach { fill:#F7B5A6; }
+      .confetti-yellow { fill:#F6C15A; }
+    </style>
+  </defs>
+
+  <g>
+    <ellipse class="blue" cx="220" cy="300" rx="85" ry="105"/>
+    <path d="M 220 405 C 210 430, 210 445, 220 460 C 230 480, 220 500, 200 515"
+          fill="none" stroke="#8DCDE1" stroke-width="10" stroke-linecap="round"/>
+    <ellipse class="peach" cx="804" cy="300" rx="85" ry="105"/>
+    <path d="M 804 405 C 814 430, 814 445, 804 460 C 794 480, 804 500, 824 515"
+          fill="none" stroke="#EFA79B" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <circle class="orange-stroke" cx="512" cy="360" r="180"/>
+    <circle class="orange-stroke" cx="328" cy="360" r="28"/>
+    <circle class="orange-stroke" cx="696" cy="360" r="28"/>
+    <path class="orange-stroke" d="M 560 215
+                                    c 0 0 -10 -25 -40 -25
+                                    c -32 0 -62 26 -62 52
+                                    c 0 15 12 28 28 28" />
+    <path class="orange-stroke" d="M 440 340 q 32 -24 64 0"/>
+    <path class="orange-stroke" d="M 520 340 q 32 -24 64 0"/>
+    <path class="orange-stroke" d="M 440 425 q 72 70 144 0"/>
+  </g>
+
+  <g opacity="0.9">
+    <polygon class="confetti-blue" points="110,560 140,570 120,595"/>
+    <polygon class="confetti-mint" points="170,690 190,660 210,690"/>
+    <polygon class="confetti-peach" points="860,600 880,575 900,605"/>
+    <polygon class="confetti-yellow" points="810,760 840,770 820,800"/>
+    <polygon class="confetti-mint" points="260,760 290,770 270,800"/>
+    <polygon class="confetti-blue" points="720,540 740,570 700,570"/>
+    <polygon class="confetti-peach" points="310,520 340,530 325,560"/>
+    <polygon class="confetti-yellow" points="560,580 590,600 560,610"/>
+  </g>
+
+  <g fill="#F59E0B">
+    <text x="512" y="690" font-size="144" font-weight="700" text-anchor="middle"
+          font-family="SF Pro Rounded, Arial Rounded MT Bold, Avenir-Heavy, Helvetica, Arial, sans-serif">
+      Happy
+    </text>
+    <text x="512" y="820" font-size="144" font-weight="700" text-anchor="middle"
+          font-family="SF Pro Rounded, Arial Rounded MT Bold, Avenir-Heavy, Helvetica, Arial, sans-serif">
+      Birthday
+    </text>
+  </g>
+</svg>

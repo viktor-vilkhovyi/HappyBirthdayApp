@@ -29,9 +29,22 @@
 		40A745712E5B90820088EA5E /* HappyBirthdayAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappyBirthdayAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		40A745C02E5B9FB00088EA5E /* Exceptions for "HappyBirthdayApp" folder in "HappyBirthdayApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				App/Files/Info.plist,
+			);
+			target = 40A745592E5B90800088EA5E /* HappyBirthdayApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		40A7455C2E5B90800088EA5E /* HappyBirthdayApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				40A745C02E5B9FB00088EA5E /* Exceptions for "HappyBirthdayApp" folder in "HappyBirthdayApp" target */,
+			);
 			path = HappyBirthdayApp;
 			sourceTree = "<group>";
 		};
@@ -400,9 +413,12 @@
 				DEVELOPMENT_TEAM = TSGQDLAC56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HappyBirthdayApp/App/Files/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to let you take a profile picture.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need access to save pictures to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photos to choose a profile picture.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -428,9 +444,12 @@
 				DEVELOPMENT_TEAM = TSGQDLAC56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HappyBirthdayApp/App/Files/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to let you take a profile picture.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need access to save pictures to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photos to choose a profile picture.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
