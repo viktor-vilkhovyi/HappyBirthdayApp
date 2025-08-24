@@ -9,6 +9,11 @@ import SwiftUI
 
 struct PreviewHappyBirthdayCardView<Model: IPreviewHappyBirthdayCardModel>: View {
     
+    @State private var childFrame: CGRect = .zero
+    @State private var avatarViewSize: CGSize = .zero
+    private let avatarViewBottomOffset: CGFloat = 15
+    private let parentCoordinateSpace = "parentCoordinateSpace"
+    
     var sharing: Bool = false
     @State private var screenShot: UIImage?
     @State private var selectedImage: UIImage?
@@ -30,16 +35,26 @@ struct PreviewHappyBirthdayCardView<Model: IPreviewHappyBirthdayCardModel>: View
                     image: model.details.image,
                     onCameraTap: sharing ? nil : openChooser
                 )
+                .readSize { size in
+                    avatarViewSize = size
+                }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-            .padding(.bottom, 188)
-            
+            .position(
+                x: childFrame.midX,
+                y: childFrame.minY - avatarViewSize.height / 2 - avatarViewBottomOffset
+            )
+        
             VStack(spacing: 53) {
                 Image(.nanitLogo)
+                    .readFrame(in: .named(parentCoordinateSpace)) { frame in
+                        childFrame = frame
+                    }
+                    
                 
                 ShareButton(title: "Share the news", action: shareButtonTapped)
                     .visible(!sharing)
             }
+            
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
             .padding(.bottom, 53)
             .zIndex(2)
@@ -48,6 +63,7 @@ struct PreviewHappyBirthdayCardView<Model: IPreviewHappyBirthdayCardModel>: View
                 .zIndex(1)
                 .visible(!sharing)
         }
+        .coordinateSpace(name: parentCoordinateSpace)
     }
     
     private func shareButtonTapped() {
@@ -69,7 +85,7 @@ struct PreviewHappyBirthdayCardView<Model: IPreviewHappyBirthdayCardModel>: View
             details: .init(
                 fullName: "John Doe",
                 age: .init(value: 1, unit: "month"),
-                templateScheme: .init(templateConfig: .elephant, avatarScheme: .sunny)
+                templateScheme: .init(templateConfig: .fox, avatarScheme: .mint)
             )
         )
     )
