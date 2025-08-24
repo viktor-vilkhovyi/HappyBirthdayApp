@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AgeAnnouncementView: View {
     
-    struct Age {
+    struct Age: Hashable {
         let value: Int
         let unit: String
     }

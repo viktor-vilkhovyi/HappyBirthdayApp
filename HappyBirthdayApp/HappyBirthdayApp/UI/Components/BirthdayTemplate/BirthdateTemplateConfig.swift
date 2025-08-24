@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BirthdateTemplateConfig: Identifiable {
+struct BirthdateTemplateConfig: Identifiable, Hashable {
    
     let id = UUID()
     let image: ImageResource

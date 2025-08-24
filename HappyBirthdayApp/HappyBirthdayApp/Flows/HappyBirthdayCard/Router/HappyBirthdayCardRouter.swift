@@ -14,15 +14,15 @@ protocol IHappyBirthdayCardRouter: AnyObject {
 
 enum HappyBirthdayCardRoute: Hashable {
     case createHappyBirthdayCard
-    case previewHappyBirthdayCard(String)
+    case previewHappyBirthdayCard(HappyBirthdayCardDetails)
     
     @ViewBuilder
     func navigationDestination(using router: IHappyBirthdayCardRouter) -> some View {
         switch self {
         case .createHappyBirthdayCard:
             CreateHappyBirthdayCardView(model: CreateHappyBirthdayCardModel(router: router))
-        case .previewHappyBirthdayCard(let string):
-            PreviewHappyBirthdayCardView(model: PreviewHappyBirthdayCardModel(router: router))
+        case .previewHappyBirthdayCard(let details):
+            PreviewHappyBirthdayCardView(model: PreviewHappyBirthdayCardModel(router: router, details: details))
         }
     }
 }

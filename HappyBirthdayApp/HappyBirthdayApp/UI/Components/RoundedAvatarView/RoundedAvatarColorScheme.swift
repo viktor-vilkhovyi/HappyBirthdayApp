@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RoundedAvatarColorScheme {
+struct RoundedAvatarColorScheme: Hashable {
     
     let stroke, fill: Color
     

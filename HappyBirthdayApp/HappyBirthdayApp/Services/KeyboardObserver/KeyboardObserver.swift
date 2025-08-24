@@ -8,13 +8,11 @@
 import UIKit
 import Combine
 
-final class KeyboardObserver: ObservableObject {
+@Observable
+final class KeyboardObserver {
    
-    @Published var height: CGFloat = 0
-    @Published var isKeyboardPresented: Bool = false
+    var isKeyboardPresented: Bool = false
     private var cancellables = Set<AnyCancellable>()
-    
-    var isVisible: Bool { height > 0 }
     
     init() {
         NotificationCenter.default
