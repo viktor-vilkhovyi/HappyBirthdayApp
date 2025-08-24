@@ -15,6 +15,8 @@ struct ContentView<Model: IContentModel>: View {
         NavigationStack(path: $model.path) {
             VStack(spacing: 24) {
                 Text("Welcome to Happy Birthday App!")
+                    .font(.bentonSans(.bold, size: 32))
+                    .multilineTextAlignment(.center)
                 
                 Button(action: { model.perform(.createHappyBirthdayCard) }) {
                     Text("Create Happy Birthday Card")
