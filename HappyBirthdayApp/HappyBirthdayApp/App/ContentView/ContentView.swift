@@ -24,6 +24,7 @@ struct ContentView<Model: IContentModel>: View {
                     switch route {
                     case .happyBirthdayCard(let route):
                         route.navigationDestination(using: model)
+                            .toolbar(.hidden, for: .navigationBar)
                 }
             }
         }
