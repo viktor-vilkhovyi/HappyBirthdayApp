@@ -58,7 +58,7 @@ struct CreateHappyBirthdayCardView<Model: ICreateHappyBirthdayCardModel>: View {
             }
             .primaryButton(isFullWidth: true, state: .brandRed)
             .padding()
-            .disabled(model.fullName.isEmpty)
+            .disabled(!model.isValid())
         }
     }
     

@@ -12,6 +12,7 @@ protocol ICreateHappyBirthdayCardModel {
     var birthdate: Date { get set }
     var image: UIImage? { get set }
     
+    func isValid() -> Bool
     func displayedAge() -> String
     func showBirthdayScreen()
 }
@@ -42,7 +43,9 @@ final class CreateHappyBirthdayCardModel: ICreateHappyBirthdayCardModel {
         router?.perform(.previewHappyBirthdayCard(.init(
             fullName: fullName,
             age: .init(value: components.value, unit: components.unitLabel),
-            templateScheme: randomTemplateScheme())))
+            image: image,
+            templateScheme: randomTemplateScheme()
+        )))
     }
     
     private func randomTemplateScheme() -> TemplateScheme {
@@ -56,5 +59,9 @@ final class CreateHappyBirthdayCardModel: ICreateHappyBirthdayCardModel {
     
     func displayedAge() -> String {
         ageService.formattedAge(from: birthdate, now: .now,  mode: .full)
+    }
+    
+    func isValid() -> Bool {
+        !fullName.isEmpty && ageService.ageComponents(from: birthdate, now: .now) != nil
     }
 }

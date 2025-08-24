@@ -57,10 +57,6 @@ struct PreviewHappyBirthdayCardView<Model: IPreviewHappyBirthdayCardModel>: View
         
         shareImage(screenShot)
     }
-    
-    private func cameraTapped() {
-        
-    }
 }
 
 #Preview {
