@@ -19,7 +19,7 @@ struct RoundedAvatarView: View {
         ZStack(alignment: .topTrailing) {
             makeImagePlaceholderView()
             
-            onCameraTap.flatMap(makeCameraButtonView)
+//            onCameraTap.flatMap(makeCameraButtonView)
         }
     }
     
@@ -37,8 +37,6 @@ struct RoundedAvatarView: View {
             .clipShape(Circle())
         }
         .buttonStyle(ScaledButtonStyle(scaled: 1.2))
-        .padding(.top, 8)
-        .padding(.trailing, 15)
     }
     
     private func makeImagePlaceholderView() -> some View {
@@ -63,6 +61,9 @@ struct RoundedAvatarView: View {
                 lineWidth: lineWidth
             )
         )
+        .circleOverlay(at: 45) {
+            onCameraTap.flatMap(makeCameraButtonView)
+        }
     }
 }
 
