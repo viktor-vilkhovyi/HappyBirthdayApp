@@ -31,6 +31,8 @@ struct PreviewHappyBirthdayCardView<Model: IPreviewHappyBirthdayCardModel>: View
                     onCameraTap: sharing ? nil : openChooser
                 )
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+            .padding(.bottom, 188)
             
             VStack(spacing: 53) {
                 Image(.nanitLogo)
@@ -40,7 +42,7 @@ struct PreviewHappyBirthdayCardView<Model: IPreviewHappyBirthdayCardModel>: View
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
             .padding(.bottom, 53)
-            .zIndex(1)
+            .zIndex(2)
             
             BackButton()
                 .zIndex(1)
