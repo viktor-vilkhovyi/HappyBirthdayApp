@@ -16,11 +16,7 @@ struct RoundedAvatarView: View {
     var onCameraTap: Handler?
     
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            makeImagePlaceholderView()
-            
-//            onCameraTap.flatMap(makeCameraButtonView)
-        }
+        makeImagePlaceholderView()
     }
     
     private func makeCameraButtonView(_ action: @escaping Handler) -> some View {
