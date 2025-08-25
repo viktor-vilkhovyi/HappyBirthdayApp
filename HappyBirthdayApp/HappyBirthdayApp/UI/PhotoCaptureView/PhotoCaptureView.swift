@@ -31,6 +31,7 @@ struct PhotoCaptureView<Content: View>: View {
             }
             .sheet(isPresented: $showPicker) {
                 ImagePicker(selectedImage: $image, sourceType: sourceType)
+                    .presentationBackground(.black)
             }
             .alert("Camera Access Denied", isPresented: $showPermissionAlert) {
                 Button("Go to Settings") { openAppSettings() }
