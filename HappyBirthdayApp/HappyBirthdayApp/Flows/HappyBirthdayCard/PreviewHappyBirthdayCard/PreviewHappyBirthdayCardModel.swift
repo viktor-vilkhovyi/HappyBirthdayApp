@@ -15,11 +15,11 @@ struct TemplateScheme: Hashable {
 struct HappyBirthdayCardDetails: Hashable {
     let fullName: String
     let age: AgeAnnouncementView.Age
-    var image: UIImage?
     let templateScheme: TemplateScheme
 }
 
 protocol IPreviewHappyBirthdayCardModel {
+    var mainImage: UIImage? { get set }
     var details: HappyBirthdayCardDetails { get set }
     func backButtonTapped()
 }
@@ -29,13 +29,21 @@ final class PreviewHappyBirthdayCardModel: IPreviewHappyBirthdayCardModel {
     
     var details: HappyBirthdayCardDetails
     weak var router: IHappyBirthdayCardRouter?
+    private var store: IHappyBirthdayCardStoreService
+    
+    var mainImage: UIImage? {
+        get { store.mainImage }
+        set { store.mainImage = newValue }
+    }
     
     init(
         router: IHappyBirthdayCardRouter?,
-        details: HappyBirthdayCardDetails
+        details: HappyBirthdayCardDetails,
+        store: IHappyBirthdayCardStoreService = HappyBirthdayCardStoreService()
     ) {
         self.router = router
         self.details = details
+        self.store = store
     }
     
     func backButtonTapped() {

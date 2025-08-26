@@ -71,7 +71,6 @@ final class CreateHappyBirthdayCardModel: ICreateHappyBirthdayCardModel {
         router?.perform(.previewHappyBirthdayCard(.init(
             fullName: fullName,
             age: .init(value: components.value, unit: components.unitLabel),
-            image: image,
             templateScheme: randomTemplateScheme()
         )))
     }

@@ -29,10 +29,10 @@ struct PreviewHappyBirthdayCardView<Model: IPreviewHappyBirthdayCardModel>: View
             .padding(.horizontal, 75)
             .zIndex(1)
             
-            PhotoCaptureView(image: $model.details.image) { openChooser in
+            PhotoCaptureView(image: $model.mainImage) { openChooser in
                 RoundedAvatarView(
                     colorScheme: model.details.templateScheme.avatarScheme,
-                    image: model.details.image,
+                    image: model.mainImage,
                     onCameraTap: sharing ? nil : openChooser
                 )
                 .readSize { size in
