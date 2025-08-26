@@ -40,7 +40,6 @@ struct PreviewHappyBirthdayCardView<Model: IPreviewHappyBirthdayCardModel>: View
                 }
             }
             .frame(maxHeight: .infinity, alignment: .bottom)
-//            .position(avatarCalculatedPosition()) // TODO: fix me
             .padding(.bottom, 188)
 
             VStack(spacing: 53) {
@@ -74,18 +73,6 @@ struct PreviewHappyBirthdayCardView<Model: IPreviewHappyBirthdayCardModel>: View
         var copy = self
         copy.sharing = true
         return copy
-    }
-    
-    private func avatarCalculatedPosition() -> CGPoint {
-        guard !appLogoFrame.isEmpty else { return .zero }
-
-        let rawX = appLogoFrame.midX
-        let rawY = appLogoFrame.minY - avatarSize.height/2 - avatarViewBottomOffset
-
-        return CGPoint(
-            x: rawX,
-            y: rawY
-        )
     }
 }
 
