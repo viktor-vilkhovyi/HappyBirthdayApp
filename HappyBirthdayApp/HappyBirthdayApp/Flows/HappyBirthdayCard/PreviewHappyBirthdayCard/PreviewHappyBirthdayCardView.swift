@@ -39,7 +39,9 @@ struct PreviewHappyBirthdayCardView<Model: IPreviewHappyBirthdayCardModel>: View
                     avatarSize = size
                 }
             }
-            .position(avatarCalculatedPosition())
+            .frame(maxHeight: .infinity, alignment: .bottom)
+//            .position(avatarCalculatedPosition()) // TODO: fix me
+            .padding(.bottom, 188)
 
             VStack(spacing: 53) {
                 Image(.nanitLogo)
