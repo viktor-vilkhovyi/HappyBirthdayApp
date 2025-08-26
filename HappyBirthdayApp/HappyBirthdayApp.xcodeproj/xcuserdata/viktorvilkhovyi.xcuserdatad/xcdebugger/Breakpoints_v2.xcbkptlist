@@ -3,4 +3,20 @@
    uuid = "6627D8F7-BF1C-49AF-AE4E-6648719FE880"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B1D2E33-B5A6-4F3F-8B7C-6F7979AE536F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../var/folders/t4/nw4yrf4s091dbvyn5qkxf2dh0000gn/T/swift-generated-sources/@__swiftmacro_16HappyBirthdayApp06CreateaB9CardModelC8fullName18ObservationTrackedfMp_.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

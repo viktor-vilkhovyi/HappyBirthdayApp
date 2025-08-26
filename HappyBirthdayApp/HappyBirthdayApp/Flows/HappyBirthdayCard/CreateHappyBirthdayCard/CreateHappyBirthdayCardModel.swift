@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+// MARK: Store Service
+protocol IHappyBirthdayCardStoreService {
+    var fullName: String { get set }
+    var birthdate: Date { get set }
+    var mainImage: UIImage? { get set }
+}
+
+struct HappyBirthdayCardStoreService: IHappyBirthdayCardStoreService {
+    @AppStorage("fullName") var fullName: String = ""
+    @AppStorage("birthdate") var birthdate = Date()
+    @AppStorageImageFile("mainImage", format: .jpg(quality: 9)) var mainImage: UIImage?
+}
+
+// MARK: - Model
 protocol ICreateHappyBirthdayCardModel {
     var fullName: String { get set }
     var birthdate: Date { get set }
@@ -20,17 +34,31 @@ protocol ICreateHappyBirthdayCardModel {
 @Observable
 final class CreateHappyBirthdayCardModel: ICreateHappyBirthdayCardModel {
     
-    var fullName: String = ""
-    var birthdate = Date()
-    var image: UIImage?
-    
-    private let ageService: IAgeFormatting
     weak var router: IHappyBirthdayCardRouter?
+    private let ageService: IAgeFormatting
+    private var store: IHappyBirthdayCardStoreService
+    
+    var fullName: String {
+        get { store.fullName }
+        set { store.fullName = newValue }
+    }
+    
+    var birthdate: Date {
+        get { store.birthdate }
+        set { store.birthdate = newValue }
+    }
+    
+    var image: UIImage? {
+        get { store.mainImage }
+        set { store.mainImage = newValue }
+    }
     
     init(
         router: IHappyBirthdayCardRouter?,
-        ageService: IAgeFormatting = AgeFormatterService()
+        ageService: IAgeFormatting = AgeFormatterService(),
+        store: IHappyBirthdayCardStoreService = HappyBirthdayCardStoreService()
     ) {
+        self.store = store
         self.router = router
         self.ageService = ageService
     }
