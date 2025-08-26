@@ -31,9 +31,7 @@ struct AppStorageImageFile {
         get { ImageFileStorage.load(path: storedPath) }
         set {
             if let image = newValue {
-                let name = UUID().uuidString
-                
-                if let newPath = ImageFileStorage.save(image, name: name, format: format) {
+                if let newPath = ImageFileStorage.save(image, name: key, format: format) {
                     if newPath != storedPath { ImageFileStorage.delete(path: storedPath) }
                     storedPath = newPath
                 }
