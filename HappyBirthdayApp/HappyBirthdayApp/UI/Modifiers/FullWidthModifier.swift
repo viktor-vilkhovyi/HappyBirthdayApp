@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// TODO: consider one more case if user set fixed height
 struct FullWidthModifier: ViewModifier {
     let isFullWidth: Bool
     var minHeight, fixedHeight: CGFloat?

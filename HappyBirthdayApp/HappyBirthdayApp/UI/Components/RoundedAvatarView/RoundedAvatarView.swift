@@ -9,14 +9,20 @@ import SwiftUI
 
 struct RoundedAvatarView: View {
     
+    var showCameraButton: Bool = true
     var size: CGFloat = 222
     var lineWidth: CGFloat = 7
     let colorScheme: RoundedAvatarColorScheme
-    var image: UIImage?
-    var onCameraTap: Handler?
+    @Binding var image: UIImage?
     
     var body: some View {
-        makeImagePlaceholderView()
+        PhotoCaptureView(image: $image) { openChooser in
+            makeImagePlaceholderView()
+                .circleOverlay(at: 45) {
+                    makeCameraButtonView(openChooser)
+                        .visible(showCameraButton)
+                }
+        }
     }
     
     private func makeCameraButtonView(_ action: @escaping Handler) -> some View {
@@ -57,12 +63,9 @@ struct RoundedAvatarView: View {
                 lineWidth: lineWidth
             )
         )
-        .circleOverlay(at: 45) {
-            onCameraTap.flatMap(makeCameraButtonView)
-        }
     }
 }
 
 #Preview {
-    RoundedAvatarView(colorScheme: .sunny, image: nil) { }
+    RoundedAvatarView(colorScheme: .sunny, image: .constant(nil))
 }

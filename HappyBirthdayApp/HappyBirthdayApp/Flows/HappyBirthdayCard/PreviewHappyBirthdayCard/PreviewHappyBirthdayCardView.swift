@@ -29,15 +29,13 @@ struct PreviewHappyBirthdayCardView<Model: IPreviewHappyBirthdayCardModel>: View
             .padding(.horizontal, 75)
             .zIndex(1)
             
-            PhotoCaptureView(image: $model.mainImage) { openChooser in
-                RoundedAvatarView(
-                    colorScheme: model.details.templateScheme.avatarScheme,
-                    image: model.mainImage,
-                    onCameraTap: sharing ? nil : openChooser
-                )
-                .readSize { size in
-                    avatarSize = size
-                }
+            RoundedAvatarView(
+                showCameraButton: !sharing,
+                colorScheme: model.details.templateScheme.avatarScheme,
+                image: $model.mainImage,
+            )
+            .readSize { size in
+                avatarSize = size
             }
             .frame(maxHeight: .infinity, alignment: .bottom)
             .padding(.bottom, 188)

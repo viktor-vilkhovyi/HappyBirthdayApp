@@ -37,13 +37,10 @@ struct CreateHappyBirthdayCardView<Model: ICreateHappyBirthdayCardModel>: View {
                         .labelsHidden()
                         .environment(\.locale, Locale(identifier: "en_US"))
                         
-                        PhotoCaptureView(image: $model.image) { openChooser in
-                            RoundedAvatarView(
-                                colorScheme: .mint,
-                                image: model.image,
-                                onCameraTap: openChooser
-                            )
-                        }
+                        RoundedAvatarView(
+                            colorScheme: .mint,
+                            image: $model.image,
+                        )
                     }
                 }
                 
