@@ -22,7 +22,7 @@ struct PreviewHappyBirthdayCardView<Model: IPreviewHappyBirthdayCardModel>: View
     var body: some View {
         BirthdateTemplateView(config: model.details.templateScheme.templateConfig) {
             AgeAnnouncementView(
-                fullName: model.details.fullName,
+                fullName: model.details.prefixedName,
                 age: model.details.age
             )
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

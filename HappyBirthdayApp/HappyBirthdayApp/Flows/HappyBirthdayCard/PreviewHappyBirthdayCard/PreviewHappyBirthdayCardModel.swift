@@ -16,6 +16,10 @@ struct HappyBirthdayCardDetails: Hashable {
     let fullName: String
     let age: AgeAnnouncementView.Age
     let templateScheme: TemplateScheme
+    
+    var prefixedName: String {
+        String(fullName.prefix(20))
+    }
 }
 
 protocol IPreviewHappyBirthdayCardModel {
